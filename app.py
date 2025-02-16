@@ -75,7 +75,7 @@ def handle_message(message: types.Message):
                         caption = f"<b>{title}</b>\n"
                         bot.send_video(-1002236076056, final_video_url, caption=caption, parse_mode='HTML')
                         bot.send_message(message.chat.id, "✅ Video successfully forwarded to https://t.me/FunnyVideosEnglish.", reply_to_message_id=message.message_id)
-                        bot.send_message(-1002236076056, "Send Yours Funny Video",reply_markup=keyboard)
+        
                         coll2.delete_one({"_id": message.from_user.id})
                     else:
                         bot.send_message(message.chat.id, "⚠️ Video unavailable.", reply_to_message_id=message.message_id)
